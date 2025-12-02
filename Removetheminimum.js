@@ -9,10 +9,13 @@
 // Don't change the order of the elements that are left.
 
 // Examples
-// * Input: [1,2,3,4,5], output = [2,3,4,5]
-// * Input: [5,3,2,1,4], output = [5,3,2,4]
-// * Input: [2,2,1,2,1], output = [2,2,2,1]
-
 function removeSmallest(numbers) {
-  return [];
+  const min = Math.min(...numbers);
+  const fminx = numbers.indexOf(min);
+  const fmin = numbers[fminx];
+  // return fminx
+  return numbers.filter((n, i) => i !== fminx);
+  // numbers.splice(fminx,1);
 }
+console.log(removeSmallest([1, 2, 3, 4, 5]));
+console.log(removeSmallest([2, 2, 1, 2, 1]));
