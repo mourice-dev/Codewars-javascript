@@ -9,3 +9,13 @@
 // O is misinterpreted as 0
 // I is misinterpreted as 1
 // The test cases contain numbers only by mistake.
+
+function correct(string) {
+  const arr = string.split("");
+  return arr
+    .map((char) =>
+      char === "1" ? "I" : char === "5" ? "S" : char === "0" ? "O" : char
+    )
+    .join("");
+}
+console.log(correct("BUDAPE5T"));
