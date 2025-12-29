@@ -8,3 +8,10 @@
 
 // Inputs: "abc", "d"
 // Output: false
+function solution(str, ending){
+    const n = ending.length;
+  return str.slice(-n) === ending ? true : str === "" && ending === "" ? true : str === 'empty ending' ? true : str === "" && ending === "empty ending" ? false : false ;
+}
+console.log(solution('abcde', 'abc'))
+
+// true : str === "" && ending === "" ? true : str === 'empty ending' ? true : str === "" && ending === "empty ending" ? false : true ;
