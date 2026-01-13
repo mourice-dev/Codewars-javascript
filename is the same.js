@@ -25,25 +25,40 @@
 // a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
 
 // If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
+// function comp(array1, array2) {
+//   let part = [];
+//   const arrm1 = array1.map((n) => n * n);
+//   arrm1.sort((a, b) => a - b);
+//   array2.sort((a, b) => a - b);
+//   for (let i = 0; i < arrm1.length; i++) {
+//     let found = false;
+//     for (let k = 0; k < array2.length; k++) {
+//       if (arrm1[i] === array2[k]) {
+//         found = true;
+//       }
+//     }
+//     part.push(found);
+//   }
+//   return part.every(Boolean);
+// }
+// console.log(
+//   comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11],
+//     [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   )
+// );
 function comp(array1, array2) {
-  let part = [];
-  const arrm1 = array1.map((n) => n * n);
-  arrm1.sort((a, b) => a - b);
-  array2.sort((a, b) => a - b);
-  for (let i = 0; i < arrm1.length; i++) {
-    let found = false;
-    for (let k = 0; k < array2.length; k++) {
-      if (arrm1[i] === array2[k]) {
-        found = true;
-      }
+  if (!array1 || !array2) return false;
+  if (array1.length !== array2.length) return false;
+
+  const arr1Squared = array1.map((n) => n * n).sort((a, b) => a - b);
+  const arr2Sorted = array2.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr1Squared.length; i++) {
+    if (arr1Squared[i] !== arr2Sorted[i]) {
+      return false;
     }
-    part.push(found);
   }
-  return part.every(Boolean);
+
+  return true;
 }
-console.log(
-  comp(
-    [121, 144, 19, 161, 19, 144, 19, 11],
-    [121, 14641, 20736, 361, 25921, 361, 20736, 361]
-  )
-);
