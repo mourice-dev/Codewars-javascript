@@ -10,9 +10,8 @@
 // You may consider that there will not be any empty arrays/vectors.
 
 var min = function (list) {
-  return list[0];
+  return Math.min(...list);
 };
-
 var max = function (list) {
-  return list[0];
+  return Math.max(...list);
 };
