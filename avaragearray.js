@@ -1,3 +1,5 @@
+/** @format */
+
 // ASC Week 1 Challenge 5 (Medium #2)
 // Create a function that takes a 2D array as an input, and outputs another array that contains the average values for the numbers in the nested arrays at the corresponding indexes.
 
@@ -13,5 +15,8 @@
 // average:   [3, 4, 5, 6]
 
 function avgArray(arr) {
-
+  return arr[0].map(
+    (_, index) =>
+      arr.reduce((sum, values) => sum + values[index], 0) / arr.length,
+  );
 }
