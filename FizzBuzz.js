@@ -30,5 +30,11 @@
  */
 
 function fizzBuzz(n) {
-  // Your code here
+  return Array.from({ length: n }, (_, index) => {
+    const number = index + 1;
+    if (number % 15 === 0) return "FizzBuzz";
+    if (number % 3 === 0) return "Fizz";
+    if (number % 5 === 0) return "Buzz";
+    return number;
+  });
 }
