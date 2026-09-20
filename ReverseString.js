@@ -16,5 +16,5 @@
  */
 
 function reverseString(s) {
-  // Your code here
+  s.reverse();
 }
