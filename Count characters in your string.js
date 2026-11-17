@@ -4,13 +4,13 @@
 
 // What if the string is empty? Then the result should be empty object literal, {}.
 function count(string) {
-  if (typeof string === string) {
+  if (string === "") {
     return {};
   }
   // const arryString = string.split("");
   // return arryString
   let obj = {};
-  for (char of string) {
+  for (const char of string) {
     obj[char] = (obj[char] || 0) + 1;
   }
 
